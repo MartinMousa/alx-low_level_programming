@@ -2,28 +2,28 @@
 
 /**
  * append_text_to_file - Appends text in the end of file.
- * @flname: pointes to the name of file.
- * @txt_conte: string is add in the end of the file.
+ * @filename: pointes to the name of file.
+ * @text_content: string is add in the end of the file.
  * 
- * Return: If the function fails or flname is NULL - -1.
+ * Return: If the function fails or filename is NULL - -1.
  *         If the file does not exist the user lacks write permissions - -1.
  *         Otherwise - 1.
  */
-int append_text_to_file(const char *flname, char *txt_conte)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int m, x, ln = 0;
 
-	if (flname == NULL)
+	if (filename == NULL)
 		return (-1);
 
-	if (txt_conte != NULL)
+	if (text_content != NULL)
 	{
-		for (ln = 0; txt_conte[ln];)
+		for (ln = 0; text_content[ln];)
 			ln++;
 	}
 
-	m = open(flname, O_WRONLY | O_APPEND);
-	x = write(m, txt_conte, ln);
+	m = open(filename, O_WRONLY | O_APPEND);
+	x = write(m, text_content, ln);
 
 	if (m == -1 || x == -1)
 		return (-1);
