@@ -4,8 +4,6 @@
  * append_text_to_file - Appends text in the end of file.
  * @flname: pointes to the name of file.
  * @txt_conte: string is add in the end of the file.
- *
- * Description: Appends text in the end of file and returns 1.
  * 
  * Return: If the function fails or flname is NULL - -1.
  *         If the file does not exist the user lacks write permissions - -1.
